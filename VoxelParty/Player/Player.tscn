@@ -682,15 +682,12 @@ shape = SubResource( 47 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-<<<<<<< HEAD
 
 [node name="HealthUI" parent="." instance=ExtResource( 7 )]
 margin_left = -144.0
 margin_top = -80.0
 margin_right = -104.0
 margin_bottom = -64.0
-=======
->>>>>>> aa392837768d16d0ddc9638daba0dbda4a1543a6
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Position2D/SwordHitbox"]
