@@ -96,3 +96,4 @@ func _on_Hurtbox_area_entered(area):
 
 func _process(delta):
 	$Camera2D.offset = get_local_mouse_position() / OFFSET
+
