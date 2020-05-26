@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Player/SwordHitbox.gd" type="Script" id=4]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Shadows/MediumShadow.png" type="Texture" id=6]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.0
@@ -69,7 +70,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "AttackLeft"
 length = 0.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -619,6 +619,7 @@ script = ExtResource( 1 )
 position = Vector2( -0.513489, -9.27649 )
 texture = ExtResource( 2 )
 hframes = 60
+frame = 35
 
 [node name="Sprite2" type="Sprite" parent="Sprite"]
 position = Vector2( -0.486511, 13.2765 )
@@ -658,7 +659,7 @@ parameters/Run/blend_position = Vector2( 0, 1 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 0, -4 )
-rotation = 1.5708
+rotation = 3.14159
 
 [node name="SwordHitbox" parent="Position2D" instance=ExtResource( 3 )]
 position = Vector2( 15, 0 )
@@ -680,7 +681,12 @@ shape = SubResource( 47 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-smoothing_enabled = true
+
+[node name="HealthUI" parent="." instance=ExtResource( 7 )]
+margin_left = -144.0
+margin_top = -80.0
+margin_right = -104.0
+margin_bottom = -64.0
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Position2D/SwordHitbox"]

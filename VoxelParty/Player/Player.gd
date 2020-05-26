@@ -4,6 +4,7 @@ export var FRICTION = 500
 export var ACCELERATION = 500
 export var MAX_SPEED = 80
 export var ROLL_SPEED = 120
+export var OFFSET = 8
 
 enum {
 	MOVE,
@@ -88,8 +89,10 @@ func roll_animation_finished():
 func attack_animation_finished():
 	state = MOVE
 
-
 func _on_Hurtbox_area_entered(area):
 	stats.health -= 1
 	hurtbox.start_invincibility(0.5)
 	hurtbox.create_hit_effect()
+
+func _process(delta):
+	$Camera2D.offset = get_local_mouse_position() / OFFSET
