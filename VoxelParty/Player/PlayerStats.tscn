@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Restart.tscn" type="PackedScene" id=2]
 
 [node name="PlayerStats" instance=ExtResource( 1 )]
-max_health = 4
+max_health = 5
+
+[node name="Sprite" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="TextureButton" parent="Sprite" index="0"]
+anchor_left = 0.498
+anchor_top = 0.883
+anchor_right = 0.498
+anchor_bottom = 0.883
+margin_left = -1134.16
+margin_top = -629.64
+margin_right = -785.16
+margin_bottom = -449.64
+[connection signal="pressed" from="Sprite/TextureButton" to="." method="_on_TextureButton_pressed"]
+
+[editable path="Sprite"]

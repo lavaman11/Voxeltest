@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/RestartButton.png" type="Texture" id=1]
+[ext_resource path="res://UI/Dead.png" type="Texture" id=2]
+
+[node name="Sprite" type="Sprite"]
+position = Vector2( 160.5, 90 )
+scale = Vector2( 0.166146, 0.166667 )
+texture = ExtResource( 2 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = -178.0
+margin_top = 324.0
+margin_right = 171.0
+margin_bottom = 504.0
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}

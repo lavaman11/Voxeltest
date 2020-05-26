@@ -205,8 +205,8 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
 [sub_resource type="CapsuleShape2D" id=23]
-radius = 6.0
-height = 14.6667
+radius = 4.71413
+height = 8.76441
 
 [sub_resource type="CapsuleShape2D" id=24]
 height = 13.2661
