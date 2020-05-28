@@ -1,29 +1,70 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://UI/Dead.png" type="Texture" id=1]
-[ext_resource path="res://UI/RestartButton.png" type="Texture" id=2]
+[ext_resource path="res://Tileset/DirtPathTileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tileset/DirtCliffTileMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprite.gd" type="Script" id=3]
+[ext_resource path="res://World/GrassBackground.png" type="Texture" id=4]
 
-[node name="Sprite" type="Node"]
+[node name="Sprite" type="Control"]
 script = ExtResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 160, 88 )
-scale = Vector2( 0.166667, 0.162963 )
-texture = ExtResource( 1 )
-
-[node name="TextureButton" type="TextureButton" parent="."]
-anchor_left = 0.5
-anchor_top = 0.844
-anchor_right = 0.5
-anchor_bottom = 0.844
-margin_left = -28.0
-margin_top = -12.92
-margin_right = 28.0
-margin_bottom = 19.08
-texture_normal = ExtResource( 2 )
-expand = true
-stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 320.0
+margin_bottom = 192.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 104.0
+margin_top = 104.0
+margin_right = 184.0
+margin_bottom = 148.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+margin_right = 80.0
+margin_bottom = 20.0
+text = "Play"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 80.0
+margin_bottom = 44.0
+text = "Quit"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 104.0
+margin_top = 56.0
+margin_right = 184.0
+margin_bottom = 70.0
+text = "VoxelParty"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DirtPathTileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray(  )
+
+[node name="DirtCliffTileMap" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 0, 0, 4, 1, 0, 196609, 2, 0, 196609, 3, 0, 196609, 4, 0, 196609, 5, 0, 196609, 6, 0, 196609, 7, 0, 196609, 8, 0, 196609, 9, 0, 7, 65536, 0, 65539, 65545, 0, 65539, 131072, 0, 65539, 131081, 0, 65539, 196608, 0, 65539, 196611, 0, 0, 196612, 0, 1, 196613, 0, 2, 196617, 0, 65539, 262144, 0, 65539, 262147, 0, 131072, 262148, 0, 131073, 262149, 0, 131074, 262153, 0, 65539, 327680, 0, 131075, 327689, 0, 131075 )
